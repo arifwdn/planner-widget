@@ -109,7 +109,7 @@ function App() {
                           cursor: "pointer",
                           float: "right",
                         }}>
-                        Close
+                        X
                       </button>
                     </div>
                     {widget.component}
@@ -152,7 +152,7 @@ function App() {
                             cursor: "pointer",
                             float: "right",
                           }}>
-                          Close
+                          X
                         </button>
                       </div>
                       {widget.component}
@@ -205,7 +205,7 @@ function App() {
                             cursor: "pointer",
                             float: "right",
                           }}>
-                          Close
+                          X
                         </button>
                       </div>
                       {widget.component}
@@ -256,7 +256,7 @@ function App() {
                             cursor: "pointer",
                             float: "right",
                           }}>
-                          Close
+                          X
                         </button>
                       </div>
                       {widget.component}

@@ -110,11 +110,13 @@ select {
 /* Track */
 ::-webkit-scrollbar-track {
   background: #363636;
+  border-radius: 50px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #777;
+  border-radius: 50px;
 }
 
 /* Handle on hover */

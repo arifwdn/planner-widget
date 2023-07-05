@@ -42,16 +42,17 @@
 }
 
 .add-widget-button {
-  background-color: transparent;
+  background-color: #1e1e1e;
   color: white;
   border: none;
   font-size: 15px;
   text-align: center;
   cursor: pointer;
+  backdrop-filter: blur(10px);
 }
 
 .add-widget-button:hover {
-  color: #1e1e1e;
+  filter: drop-shadow(3px 3px 5px green);
 }
 
 .right-widget,
@@ -75,7 +76,8 @@
 }
 
 select {
-  background-color: #efaeae;
+  background-color: #b3aeef;
+  border-radius: 10px;
 }
 
 /* Modal */
@@ -88,16 +90,19 @@ select {
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background-color: rgb(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(10px);
 }
 
 .modal-content {
-  background-color: #183a37;
+  background-color: rgba(0, 0, 0, 0.601);
   margin: auto;
   padding: 20px;
   width: 50%;
   max-height: 50vh;
   overflow: scroll;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
 }
 
 .modal-header {
@@ -139,8 +144,8 @@ select {
 }
 
 .widget-container {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: rgba(0, 0, 0, 0.527);
+  box-shadow: 0 8px 32px 0 rgba(33, 20, 127, 0.542);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
