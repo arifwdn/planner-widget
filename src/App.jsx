@@ -5,9 +5,16 @@ import WidgetGalleryModal from "./modals/WidgetGalleryModal";
 import Draggable from "react-draggable";
 import TimerWidget from "./widgets/TimerWidget";
 import CalendarWidget from "./widgets/CalendarWidget";
+import MyCustomWidget from "./widgets/MyCustomWidget";
 
 function App() {
   const [widgets, setWidgets] = useState([
+    {
+      id: new Date().getTime() + 1,
+      component: <MyCustomWidget />,
+      area: "main-widget",
+      name: "Pray Time",
+    },
     {
       id: new Date().getTime(),
       component: <ClockWidget />,
