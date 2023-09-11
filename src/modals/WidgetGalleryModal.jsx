@@ -12,11 +12,11 @@ export default function WidgetGalleryModal({
   setWidgets,
 }) {
   const [galleryWidgets, setGalleryWidgets] = useState([
+    { component: <MyCustomWidget />, name: "Pray Time" },
     { component: <ClockWidget />, name: "Date and Time" },
     { component: <ReminderListWidget />, name: "Reminder List" },
     { component: <TimerWidget />, name: "Timer" },
     { component: <CalendarWidget />, name: "Calendar" },
-    { component: <MyCustomWidget />, name: "Pray Time" },
   ]);
   return (
     <div

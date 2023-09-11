@@ -24,10 +24,10 @@ export default function MyCustomWidget() {
   }
   return (
     <div style={{ width: 400 }}>
-      <h6>
-        Waktu Shalat
-        {prayData.length !== 0 ? prayData.lokasi : "Not found"} dan sekitarnya
-      </h6>
+      <h4 style={{ fontWeight: "bold" }}>
+        Waktu Shalat {prayData.length !== 0 ? prayData.lokasi : "Not found"} dan
+        sekitarnya
+      </h4>
       <table
         border={0}
         style={{

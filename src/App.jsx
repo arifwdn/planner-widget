@@ -10,16 +10,16 @@ import MyCustomWidget from "./widgets/MyCustomWidget";
 function App() {
   const [widgets, setWidgets] = useState([
     {
-      id: new Date().getTime() + 1,
-      component: <MyCustomWidget />,
-      area: "main-widget",
-      name: "Pray Time",
-    },
-    {
       id: new Date().getTime(),
       component: <ClockWidget />,
       area: "main-widget",
       name: "Date and Time",
+    },
+    {
+      id: new Date().getTime() + 1,
+      component: <TimerWidget />,
+      area: "left-widget",
+      name: "Timer",
     },
     {
       id: new Date().getTime() + 2,
@@ -28,10 +28,10 @@ function App() {
       name: "Calendar",
     },
     {
-      id: new Date().getTime() + 1,
-      component: <TimerWidget />,
-      area: "left-widget",
-      name: "Timer",
+      id: new Date().getTime() + 3,
+      component: <MyCustomWidget />,
+      area: "main-widget",
+      name: "Pray Time",
     },
   ]);
   const [showWidgetModal, setShowWidgetModal] = useState(false);
