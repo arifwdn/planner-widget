@@ -23,7 +23,8 @@ export default function WidgetGalleryModal({
       className="modal"
       onClick={(e) => {
         setShowWidgetModal(false);
-      }}>
+      }}
+    >
       <div className="modal-content">
         <div className="modal-header">
           <h2>Widget Gallery</h2>
@@ -55,7 +56,8 @@ export default function WidgetGalleryModal({
                     } else {
                       alert("You can only add one of each widget");
                     }
-                  }}>
+                  }}
+                >
                   <div className="row">
                     <div className="widget-gallery-item-name">
                       {widget.name}

@@ -61,7 +61,8 @@ function App() {
           console.log("add button clicked");
           setShowWidgetModal(true);
           setSelectedWidgetArea("none-widget");
-        }}>
+        }}
+      >
         <p
           className="add-widget-button"
           style={{
@@ -80,7 +81,8 @@ function App() {
             position: "fixed",
             bottom: "10px",
             right: "10px",
-          }}>
+          }}
+        >
           +
         </p>
       </div>
@@ -98,7 +100,8 @@ function App() {
                           let widgetList = [...widgets];
                           widgetList[index].area = e.target.value;
                           setWidgets(widgetList);
-                        }}>
+                        }}
+                      >
                         <option value="none-widget">Floating</option>
                         <option value="left-widget">Left</option>
                         <option value="main-widget">Main</option>
@@ -115,7 +118,8 @@ function App() {
                           fontSize: "15px",
                           cursor: "pointer",
                           float: "right",
-                        }}>
+                        }}
+                      >
                         X
                       </button>
                     </div>
@@ -136,7 +140,8 @@ function App() {
                     <div
                       key={widget.id}
                       style={{ padding: 10 }}
-                      className="widget-container">
+                      className="widget-container"
+                    >
                       <div style={{ marginBottom: 10 }}>
                         <select
                           value={widget.area}
@@ -144,7 +149,8 @@ function App() {
                             let widgetList = [...widgets];
                             widgetList[index].area = e.target.value;
                             setWidgets(widgetList);
-                          }}>
+                          }}
+                        >
                           <option value="none-widget">Floating</option>
                           <option value="left-widget">Left</option>
                           <option value="main-widget">Main</option>
@@ -161,7 +167,8 @@ function App() {
                             fontSize: "15px",
                             cursor: "pointer",
                             float: "right",
-                          }}>
+                          }}
+                        >
                           X
                         </button>
                       </div>
@@ -179,7 +186,8 @@ function App() {
                   onClick={() => {
                     setShowWidgetModal(true);
                     setSelectedWidgetArea("left-widget");
-                  }}>
+                  }}
+                >
                   + Add Widget
                 </button>
               )}
@@ -192,7 +200,8 @@ function App() {
                     <div
                       key={widget.id}
                       style={{ padding: 10 }}
-                      className="widget-container">
+                      className="widget-container"
+                    >
                       <div style={{ marginBottom: 10 }}>
                         <select
                           value={widget.area}
@@ -200,7 +209,8 @@ function App() {
                             let widgetList = [...widgets];
                             widgetList[index].area = e.target.value;
                             setWidgets(widgetList);
-                          }}>
+                          }}
+                        >
                           <option value="none-widget">Floating</option>
                           <option value="left-widget">Left</option>
                           <option value="main-widget">Main</option>
@@ -217,7 +227,8 @@ function App() {
                             fontSize: "15px",
                             cursor: "pointer",
                             float: "right",
-                          }}>
+                          }}
+                        >
                           X
                         </button>
                       </div>
@@ -233,7 +244,8 @@ function App() {
                 onClick={() => {
                   setShowWidgetModal(true);
                   setSelectedWidgetArea("main-widget");
-                }}>
+                }}
+              >
                 + Add Widget
               </button>
             )}
@@ -246,7 +258,8 @@ function App() {
                     <div
                       key={widget.id}
                       style={{ padding: 10 }}
-                      className="widget-container">
+                      className="widget-container"
+                    >
                       <div style={{ marginBottom: 10 }}>
                         <select
                           value={widget.area}
@@ -254,7 +267,8 @@ function App() {
                             let widgetList = [...widgets];
                             widgetList[index].area = e.target.value;
                             setWidgets(widgetList);
-                          }}>
+                          }}
+                        >
                           <option value="none-widget">Floating</option>
                           <option value="left-widget">Left</option>
                           <option value="main-widget">Main</option>
@@ -271,7 +285,8 @@ function App() {
                             fontSize: "15px",
                             cursor: "pointer",
                             float: "right",
-                          }}>
+                          }}
+                        >
                           X
                         </button>
                       </div>
@@ -289,7 +304,8 @@ function App() {
                   onClick={() => {
                     setShowWidgetModal(true);
                     setSelectedWidgetArea("right-widget");
-                  }}>
+                  }}
+                >
                   + Add Widget
                 </button>
               )}
