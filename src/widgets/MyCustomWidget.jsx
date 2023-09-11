@@ -2,98 +2,77 @@ import { useState, useEffect } from "react";
 
 export default function MyCustomWidget() {
   const [prayData, setPrayData] = useState([]);
-  const getData = async () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const getData = () => {
+    setIsLoading(true);
     let date = new Date();
     date = date.toISOString().split("T")[0];
     date = date.split("-");
     let wilayah = 2110;
     const api = "https://api.myquran.com/v1/sholat/jadwal/";
-    let response = await fetch(
-      `${api}/${wilayah}/${date[0]}/${date[1]}/${date[2]}`
-    );
-    response = await response.json();
-    await setPrayData(response.data);
+    fetch(`${api}/${wilayah}/${date[0]}/${date[1]}/${date[2]}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setPrayData(data.data);
+        setIsLoading(false);
+      });
   };
-  useEffect(() => {
-    getData();
-  }, [prayData]);
+  useEffect(() => getData(), []);
+
+  if (isLoading) {
+    return <p>Getting Data ...</p>;
+  }
   return (
-    <div>
+    <div style={{ width: 400 }}>
       <h6>
-        Sholat Time <br />
-        {prayData.lokasi !== undefined ? prayData.lokasi : "Not found"}
+        Waktu Shalat
+        {prayData.length !== 0 ? prayData.lokasi : "Not found"} dan sekitarnya
       </h6>
       <table
-        border={1}
+        border={0}
         style={{
-          border: "solid 1px white",
+          fontSize: 20,
           width: "100%",
           borderCollapse: "collapse",
         }}
       >
         <tr>
           <td>Tanbih </td>
-          <td>
-            {prayData.jadwal.imsak !== undefined
-              ? prayData.jadwal.imsak
-              : "Not Found"}
-          </td>
+          <td>{prayData.length !== 0 ? prayData.jadwal.imsak : "Not Found"}</td>
         </tr>
         <tr>
           <td>Subuh </td>
-          <td>
-            {prayData.jadwal.subuh !== undefined
-              ? prayData.jadwal.subuh
-              : "Not Found"}
-          </td>
+          <td>{prayData.length !== 0 ? prayData.jadwal.subuh : "Not Found"}</td>
         </tr>
         <tr>
           <td>Isyraq </td>
           <td>
-            {prayData.jadwal.terbit !== undefined
-              ? prayData.jadwal.terbit
-              : "Not Found"}
+            {prayData.length !== 0 ? prayData.jadwal.terbit : "Not Found"}
           </td>
         </tr>
         <tr>
           <td>Dhuha </td>
-          <td>
-            {prayData.jadwal.dhuha !== undefined
-              ? prayData.jadwal.dhuha
-              : "Not Found"}
-          </td>
+          <td>{prayData.length !== 0 ? prayData.jadwal.dhuha : "Not Found"}</td>
         </tr>
         <tr>
           <td>Dzhuhr </td>
           <td>
-            {prayData.jadwal.dzuhur !== undefined
-              ? prayData.jadwal.dzuhur
-              : "Not Found"}
+            {prayData.length !== 0 ? prayData.jadwal.dzuhur : "Not Found"}
           </td>
         </tr>
         <tr>
           <td>Ashr </td>
-          <td>
-            {prayData.jadwal.ashar !== undefined
-              ? prayData.jadwal.ashar
-              : "Not Found"}
-          </td>
+          <td>{prayData.length !== 0 ? prayData.jadwal.ashar : "Not Found"}</td>
         </tr>
         <tr>
           <td>Maghrib </td>
           <td>
-            {prayData.jadwal.maghrib !== undefined
-              ? prayData.jadwal.maghrib
-              : "Not Found"}
+            {prayData.length !== 0 ? prayData.jadwal.maghrib : "Not Found"}
           </td>
         </tr>
         <tr>
           <td>Isya </td>
-          <td>
-            {prayData.jadwal.isya !== undefined
-              ? prayData.jadwal.isya
-              : "Not Found"}
-          </td>
+          <td>{prayData.length !== 0 ? prayData.jadwal.isya : "Not Found"}</td>
         </tr>
       </table>
     </div>
